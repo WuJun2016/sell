@@ -9,7 +9,7 @@
 			</div>
 		</transition>
 		<div class="num" v-show="food.count > 0">{{food.count}}</div>
-		<div class="cart-add icon-add_circle" @click="addCart($event)"></div>
+		<div class="cart-add icon-add_circle" @click.stop.prevent="addCart($event)"></div>
 	</div>
 </template>
 <script>

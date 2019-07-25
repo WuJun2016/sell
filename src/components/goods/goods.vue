@@ -2,11 +2,7 @@
 	<div class="goods">
 		<div class="menu-wrapper" ref="menuWrapper">
 			<ul>
-				<li
-					v-for="item,index in goods" class="menu-item"
-					:class="{'current': currentIndex === index}"
-					@click="selectMenu(index, $event)"
-				>
+				<li v-for="item,index in goods" class="menu-item" :class="{'current': currentIndex === index}" @click="selectMenu(index, $event)">
 					<span class="text">
 						<span class="icon" :class="classMap[item.type]" v-show="item.type > 0"></span>
 						<span class="name">{{item.name}}</span>
@@ -16,9 +12,12 @@
 		</div>
 		<div class="foods-wrapper" ref="foodsWrapper">
 			<ul>
-				<li class="food-list food-list-hook" v-for="item in goods">
+				<li
+					class="food-list food-list-hook"
+					v-for="item in goods"
+				>
 					<h2 class="title">{{item.name}}</h2>
-					<div class="food" v-for="food in item.foods">
+					<div class="food" v-for="food in item.foods" @click="openFoodDetail(food, $event)">
 						<img class="icon" :src="food.image" alt="">
 						<div class="info">
 							<span class="name">{{food.name}}</span>
@@ -48,6 +47,7 @@
 			ref="shopcart"
 		>
 		</v-shop-car>
+		<v-food :food="chooseFood" ref="food"></v-food>
 	</div>
 </template>
 
@@ -56,17 +56,19 @@ import BScroll from 'better-scroll'
 import CartControl from '../common/cartControl'
 import shopCar from '../common/shopcar'
 import Bus from '../../common/js/eventBus';
+import Food from '../food'
 const ERR_OK = 0;
 
 
 export default {
-  props: ["seller"],
+	props: ["seller"],
   data() {
     return {
 			goods: [],
 			listHeight: [],
 			scrollY: 0,
-			classMap: ['decrease', 'discount', 'guarantee', 'invoice', 'special']
+			classMap: ['decrease', 'discount', 'guarantee', 'invoice', 'special'],
+			chooseFood: {}
     };
   },
   created() {
@@ -111,6 +113,14 @@ export default {
 		}
 	},
 	methods: {
+		openFoodDetail(food, event) {
+			if(!event._constructed) {
+				return false
+			}
+			console.log(food)
+			this.chooseFood = food
+			this.$refs.food.show()
+		},
 		selectMenu(index, event) {
 			if(!event._constructed) {
 				return;
@@ -147,7 +157,8 @@ export default {
 	},
 	components: {
 		'v-shop-car': shopCar,
-		'v-cart-control': CartControl
+		'v-cart-control': CartControl,
+		'v-food': Food
 	}
 };
 </script>
