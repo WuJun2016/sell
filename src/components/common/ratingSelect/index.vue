@@ -52,27 +52,31 @@ export default {
           negative: "不满意"
         };
       }
-    }
+		},
+		isPrevent: {
+			type: Boolean,
+			default: true
+		}
   },
   data() {
     return {
       selectType2: this.selectType,
       onlyContent2: this.onlyContent
     };
-  },
+	},
   methods: {
     select(type, event) {
-      if (!event._constructed) {
+      if (!event._constructed && this.isPrevent) {
+				console.log('取消')
         return;
 			}
-			console.log(type)
-      this.selectType2 = type;
+			this.selectType2 = type;
       Bus.$emit("ratingtype.select", type);
     },
     toggleContent(event) {
-      if (!event._constructed) {
+      if (!event._constructed  && this.isPrevent) {
         return;
-      }
+			}
       this.onlyContent2 = !this.onlyContent2;
       Bus.$emit("content.toggle", this.onlyContent2);
     }

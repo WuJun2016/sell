@@ -111,6 +111,10 @@
 				});
 			});
 		},
+		destroyed() {
+			Bus.$off('ratingtype.select',() => {}),
+			Bus.$off('content.toggle', () =>{})
+		},
 		filters: {
 			formatDate(time) {
 				let date = new Date(time);
@@ -136,11 +140,9 @@
 				this.showFlag = false
 			},
 			addFirst(event) {
-				console.log(event)
 				if(!event._constructed) {
 					return
 				}
-				console.log(event)
 				Vue.set(this.food, 'count', 1)
 				Bus.$emit('cart.add', event.target)
 			},

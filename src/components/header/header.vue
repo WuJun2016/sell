@@ -212,7 +212,6 @@
 			z-index 1000
 			width: 100%
 			height: 100%
-			overflow: auto
 			backdrop-filter: blur(5px);
 			background-color: rgba(7, 17, 27, 0.8)
 			.detail-wrapper
