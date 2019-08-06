@@ -80,7 +80,5 @@
 			text-align center
 			color rgb(147,153,159)
 			font-size 10px
-
-
 </style>
 

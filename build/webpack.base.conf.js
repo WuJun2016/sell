@@ -33,8 +33,9 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            'vue$': 'vue/dist/vue.esm.js',
-            '@': resolve('src')
+						'vue$': 'vue/dist/vue.esm.js',
+						'@': resolve('src'),
+						'stylus': resolve('src/common/stylus')
         }
     },
     module: {
@@ -65,7 +66,7 @@ module.exports = {
                     limit: 10000,
                     name: utils.assetsPath('media/[name].[hash:7].[ext]')
                 }
-            },
+						},
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url-loader',

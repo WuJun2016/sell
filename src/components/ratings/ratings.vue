@@ -122,7 +122,7 @@
 </script>
 
 <style lang="stylus">
-	@import '../../common/stylus/_mixin.styl'
+	@import '~stylus/_mixin.styl'
 	.ratings
 		position: fixed
 		top: 174px

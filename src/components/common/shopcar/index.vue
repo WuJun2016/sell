@@ -19,8 +19,8 @@
 				</div>
 			</div>
 			<div class="ball-container">
-				<transition-group name="drop" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
-					<div v-for="ball,index in balls" v-show="ball.show" :key="index" class="ball">
+				<transition-group tag="p" name="drop" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
+					<div v-for="ball,key in balls" :key="ball.key" v-show="ball.show" class="ball">
 						<div class="inner inner-hook"></div>
 					</div>
 				</transition-group>
@@ -79,14 +79,19 @@
 			return {
 				balls: [
 					{
+						key: 1,
 						show: false
 					}, {
+						key: 2,
 						show: false
 					}, {
+						key: 3,
 						show: false
 					}, {
+						key: 4,
 						show: false
 					}, {
+						key: 5,
 						show: false
 					}
 				],

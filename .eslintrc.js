@@ -28,6 +28,6 @@ module.exports = {
         'indent': 0,
 				'eol-last': [0],
 				'no-tabs': [0],
-				'eslint-plugin-vue': [0]
+				'vue/require-v-for-key': 'off'
     }
 }

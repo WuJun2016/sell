@@ -163,7 +163,7 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-	@import '../../common/stylus/_mixin.styl'
+	@import '~stylus/_mixin.styl'
 
 	.goods
 		display: flex

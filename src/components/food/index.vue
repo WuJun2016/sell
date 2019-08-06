@@ -68,7 +68,7 @@
 <script>
 	import BScroll from 'better-scroll';
 	import Vue from 'vue'
-	import carCcontrol from '../common/cartcontrol'
+	import carCcontrol from '../common/cartControl'
 	import Bus from '../../common/js/eventBus'
 	import { formatDate } from '../../common/js/date'
 	import split from '../common/split'

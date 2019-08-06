@@ -3,28 +3,37 @@ body,html
   font-weight: 200
   font-family: "PingFang SC", "Helvetica Neue", Helvetica, STHeiTi, Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 .clearfix
-  display: inline-block'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  display: inline-block
   &:after
-    content: '''Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    display: block'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    height: 0'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    line-height: 0'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    clear: both'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    visibility: hidden'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    content: ''
+    display: block
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
   .border-1px
     &:after
-      -webkit-transform: scaleY(.7)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-      -moz-transform: scaleY(.7)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-      -ms-transform: scaleY(.7)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-      -o-transform: scaleY(.7)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-      transform: scaleY(.7)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+      -webkit-transform: scaleY(.7)
+      -moz-transform: scaleY(.7)
+      -ms-transform: scaleY(.7)
+      -o-transform: scaleY(.7)
+      transform: scaleY(.7)
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2)
   .border-1px
     &:after
-      -webkit-transform: scaleY(.5)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-      -moz-transform: scaleY(.5)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-      -ms-transform: scaleY(.5)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-      -o-transform: scaleY(.5)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-      transform: scaleY(.5)'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+      -webkit-transform: scaleY(.5)
+      -moz-transform: scaleY(.5)
+      -ms-transform: scaleY(.5)
+      -o-transform: scaleY(.5)
+      transform: scaleY(.5)
+@media(-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3)
+	.border-1px
+		&:after
+			-webkit-transform: scaleY(0.3)
+			-moz-transform: scaleY(0.3)
+			-ms-transform: scaleY(0.3)
+			-o-transform: scaleY(0.3)
+			transform: scaleY(0.3)
